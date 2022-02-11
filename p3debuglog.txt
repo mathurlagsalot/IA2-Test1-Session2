@@ -1,0 +1,65 @@
+GNU bash, version 4.4.20(1)-release (x86_64-pc-linux-gnu)
+b main
+Breakpoint 1 at 0x559036200800: file p3final.c, line 31.
+(gdb) r
+Starting program: /home/runner/ppa-IA2-practice2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p3final.c:31
+31    int n = input_number();
+(gdb) s
+input_number () at p3final.c:4
+4   {
+(gdb) n
+6     printf("Enter the number: ");
+(gdb) n
+7     scanf("%d", &n);
+(gdb) n
+Enter the number: 11
+8     return n;
+(gdb) p n
+$1 = 11
+(gdb) n
+9   }
+(gdb) n
+main () at p3final.c:32
+32    int r = is_composite(n);
+(gdb) s
+is_composite (n1=11) at p3final.c:13
+13    for (int i = 2; i <= n1/2; i++)
+(gdb) n
+15      if (n1%i == 0)
+(gdb) n
+13    for (int i = 2; i <= n1/2; i++)
+(gdb) n
+15      if (n1%i == 0)
+(gdb) n
+13    for (int i = 2; i <= n1/2; i++)
+(gdb) n
+15      if (n1%i == 0)
+(gdb) n
+13    for (int i = 2; i <= n1/2; i++)
+(gdb) n
+15      if (n1%i == 0)
+(gdb) n
+13    for (int i = 2; i <= n1/2; i++)
+(gdb) n
+18    return 0;
+(gdb) n
+19  }
+(gdb) n
+main () at p3final.c:33
+33    output(n, r);
+(gdb) s
+output (n1=11, iscomp=0) at p3final.c:23
+23    if (iscomp)
+(gdb) n
+26      printf("%d is not a composite number", n1);
+(gdb) n
+27  }
+(gdb) n
+main () at p3final.c:34
+34    return 0;
+(gdb) c
+Continuing.
+11 is not a composite number[Inferior 1 (process 81) exited normally]
