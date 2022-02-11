@@ -1,0 +1,91 @@
+GNU bash, version 4.4.20(1)-release (x86_64-pc-linux-gnu)
+b main
+Breakpoint 1 at 0x824: file p5final.c, line 41.
+(gdb) r
+Starting program: /home/runner/IA2-Test1-Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p5final.c:41
+41    a = input();
+(gdb) s
+input () at p5final.c:4
+4   {
+(gdb) n
+6     printf("Enter the numbers: ");
+(gdb) n
+7     scanf("%d", &a);
+(gdb) n
+Enter the numbers: 12
+8     return a;
+(gdb) p a
+$1 = 12
+(gdb) n
+9   }
+(gdb) n
+main () at p5final.c:42
+42    b = input();
+(gdb) s
+input () at p5final.c:4
+4   {
+(gdb) n
+6     printf("Enter the numbers: ");
+(gdb) n
+7     scanf("%d", &a);
+(gdb) n
+Enter the numbers: 16
+8     return a;
+(gdb) p a
+$2 = 16
+(gdb) n
+9   }
+(gdb) n
+main () at p5final.c:43
+43    gcd = find_gcd(a, b);
+(gdb) s
+find_gcd (a=12, b=16) at p5final.c:14
+14    if (a > b)
+(gdb) n
+20    if (b % a == 0)
+(gdb) n
+24    for(int i = 2; i < a/2; i++)
+(gdb) n
+26      if(a%i == 0 && b%i == 0){
+(gdb) n
+27        gcd = i;
+(gdb) n
+24    for(int i = 2; i < a/2; i++)
+(gdb) n
+26      if(a%i == 0 && b%i == 0){
+(gdb) n
+24    for(int i = 2; i < a/2; i++)
+(gdb) n
+26      if(a%i == 0 && b%i == 0){
+(gdb) n
+27        gcd = i;
+(gdb) n
+24    for(int i = 2; i < a/2; i++)
+(gdb) n
+26      if(a%i == 0 && b%i == 0){
+(gdb) n
+24    for(int i = 2; i < a/2; i++)
+(gdb) n
+30    return gcd;
+(gdb) p gcd
+$3 = 4
+(gdb) n
+31  }
+(gdb) n
+main () at p5final.c:44
+44    output(a, b, gcd);
+(gdb) s
+output (a=12, b=16, gcd=4) at p5final.c:35
+35    printf("The gcd of %d and %d is %d", a, b, gcd);
+(gdb) n
+36  }
+(gdb) n
+main () at p5final.c:45
+45    return 0;
+(gdb) c
+Continuing.
+The gcd of 12 and 16 is 4[Inferior 1 (process 502) exited normally]
+(gdb)  
