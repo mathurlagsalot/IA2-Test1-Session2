@@ -1,0 +1,52 @@
+b main
+Breakpoint 1 at 0x7f4: file p1final.c, line 22.
+(gdb) r
+Starting program: /home/runner/ppa-IA2-practice2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p1final.c:22
+22  {
+(gdb) n
+24    input(&a, &b);
+(gdb) s
+input (a=0x7fff6c0d804c, b=0x7fff6c0d8050) at p1final.c:5
+5     printf("Enter a base: ");
+(gdb) n
+6     scanf("%f", a);
+(gdb) n
+Enter a base: 10
+7     printf("Enter a height: ");
+(gdb) n
+8     scanf("%f", b);
+(gdb) n
+Enter a height: 5
+9   }
+(gdb) p a
+$1 = (float *) 0x7fff6c0d804c
+(gdb) p b
+$2 = (float *) 0x7fff6c0d8050
+(gdb) n
+main () at p1final.c:25
+25    find_area(a, b, &area);
+(gdb) s
+find_area (a=10, b=5, area=0x7fff6c0d8054) at p1final.c:13
+13    *area = (a * b)/2;
+(gdb) n
+14  }
+(gdb) p area
+$3 = (float *) 0x7fff6c0d8054
+(gdb) n
+main () at p1final.c:26
+26    output(a, b, area);
+(gdb) s
+output (a=10, b=5, area=25) at p1final.c:18
+18    printf("area of triangle with base %f and height %f is %f", a, b, area);
+(gdb) n
+19  }
+(gdb) n
+main () at p1final.c:27
+27    return 0;
+(gdb) c
+Continuing.
+area of triangle with base 10.000000 and height 5.000000 is 25.000000[Inferior 1 (process 542) exited normally]
+(gdb) 
