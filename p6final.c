@@ -1,7 +1,7 @@
 #include <stdio.h>
 void input_string (char *str)
 {
-  printf (" Enter the string \n");
+  printf (" Enter the string ");
   scanf ("%s", str);
 }
 int length (char *str)
@@ -24,7 +24,7 @@ void revstr (char *str1)
 }
 void output (char *str1)
 {
-  printf (" After reversing the string: %s\n", str1);
+  printf (" After reversing the string: %s", str1);
 }
 int main ()
 {

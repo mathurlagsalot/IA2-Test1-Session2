@@ -19,3 +19,13 @@ void output(Triangle t)
 {
   printf("Triangle with base and altitude %f,%f of area is of %f \n",t.base,t.altitude,t.area);
 }
+
+int main()
+{
+Triangle t;
+t=input_triangle();
+find_area(&t);
+output(t);
+return 0;
+    
+}
